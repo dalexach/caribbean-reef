@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+
+    <!-- Hace que el sitio sea responsive en móviles y tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Caribbean Reef Adventures | Home</title>
+
+    <!-- Archivo principal de estilos CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         HEADER / BARRA DE NAVEGACIÓN
+         ========================================================= -->
+    <header class="site-header">
+        <div class="container navbar">
+
+            <!-- Nombre o marca del proyecto -->
+            <a class="brand" href="index.html">
+                Caribbean Reef Adventures
+            </a>
+
+            <!-- Menú principal -->
+            <nav class="nav-links">
+                <!-- Esta opción está activa porque estamos en Home -->
+                <a href="index.html" class="active">Home</a>
+
+                <a href="services.html">Servicios</a>
+                <a href="about.html">Acerca de</a>
+                <a href="contact.html">Contacto</a>
+                <a href="admin-services.html">Gestión</a>
+            </nav>
+
+            <!-- Botón rápido hacia WhatsApp -->
+            <a class="whatsapp-header"
+               target="_blank"
+               href="https://wa.me/573001234567">
+                WhatsApp
+            </a>
+        </div>
+    </header>
+
+
+    <!-- =========================================================
+         HERO PRINCIPAL DEL HOME
+         ========================================================= -->
+    <section class="page-hero page-hero--large gradient-ocean">
+        <div class="container hero-home">
+
+            <!-- Ubicación destacada -->
+            <div class="location-badge">
+                📍 San Andrés, Colombia
+            </div>
+
+            <!-- Título principal -->
+            <h1 class="home-title serif">
+                Vive experiencias
+                <span class="accent">inolvidables</span>
+                en San Andrés
+            </h1>
+
+            <!-- Texto descriptivo -->
+            <p class="home-copy">
+                Wakeboard, kitesurf, tours al amanecer y aventuras en lancha privada.
+                Descubre el paraíso del Caribe.
+            </p>
+
+            <!-- Botones principales -->
+            <div class="home-actions">
+                <!-- Botón para reservar por WhatsApp -->
+                <a class="btn btn-primary"
+                   target="_blank"
+                   href="https://wa.me/573001234567">
+                    💬 Reservar por WhatsApp
+                </a>
+
+                <!-- Botón para ir a la página de servicios -->
+                <a class="btn btn-outline" href="services.html">
+                    Ver servicios →
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         BARRA DE MÉTRICAS / INDICADORES
+         ========================================================= -->
+    <section class="metrics-bar">
+        <div class="container metrics-grid">
+
+            <!-- Métrica 1 -->
+            <div class="metric">
+                <strong>+500</strong>
+                <span>Aventureros satisfechos</span>
+            </div>
+
+            <!-- Métrica 2 -->
+            <div class="metric">
+                <strong>4</strong>
+                <span>Experiencias únicas</span>
+            </div>
+
+            <!-- Métrica 3 -->
+            <div class="metric">
+                <strong>100%</strong>
+                <span>Guías certificados</span>
+            </div>
+
+            <!-- Métrica 4 -->
+            <div class="metric">
+                <strong>5★</strong>
+                <span>Calificación promedio</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECCIÓN DE SERVICIOS DESTACADOS
+         ========================================================= -->
+    <section class="featured-section">
+        <div class="container">
+
+            <!-- Texto superior -->
+            <div class="featured-title-top">
+                LO QUE OFRECEMOS
+            </div>
+
+            <!-- Título principal de la sección -->
+            <h2 class="featured-title-main serif">
+                Servicios destacados
+            </h2>
+
+            <!--
+              Aquí se renderizan dinámicamente las tarjetas desde JavaScript.
+              El contenido se inserta desde main.js usando los datos de services-data.js
+            -->
+            <div id="featured-services" class="featured-grid"></div>
+
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER / PIE DE PÁGINA
+         ========================================================= -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+
+            <!-- Marca y descripción -->
+            <div>
+                <div class="footer-brand">Caribbean Reef Adventures</div>
+                <p>
+                    Operador turístico especializado en deportes acuáticos en San Andrés.
+                    Tu aventura caribeña comienza aquí.
+                </p>
+            </div>
+
+            <!-- Columna de servicios -->
+            <div class="footer-column">
+                <h4>Servicios</h4>
+                <ul>
+                    <li>Wakeboard</li>
+                    <li>Kitesurf</li>
+                    <li>Tour en Lancha Privada</li>
+                    <li>Tour al Amanecer</li>
+                </ul>
+            </div>
+
+            <!-- Columna de empresa -->
+            <div class="footer-column">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="about.html">Quiénes somos</a></li>
+                    <li><a href="services.html">Experiencias</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="admin-services.html">Gestión</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna de contacto -->
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>+57 300 123 4567</li>
+                    <li>hola@caribbeanreef.co</li>
+                    <li>San Andrés, Colombia</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Parte inferior final del footer -->
+        <div class="container footer-bottom">
+            <span>© 2025 Caribbean Reef Adventures. Todos los derechos reservados.</span>
+            <span>Hecho con ❤️ en San Andrés 🇨🇴</span>
+        </div>
+    </footer>
+
+
+    <!-- =========================================================
+         ARCHIVOS JAVASCRIPT
+         ========================================================= -->
+    <!--
+      Este archivo contiene los datos de los servicios.
+      Actúa como respaldo local si el JSON no carga con fetch.
+    -->
+    <script src="assets/js/services-data.js"></script>
+
+    <!--
+      Este archivo contiene la lógica principal del sitio:
+      - renderizado dinámico de servicios
+      - favoritos
+      - vista detalle expandible
+      - servicios destacados del Home
+    -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- =========================================================
+         CONFIGURACIÓN BÁSICA DEL DOCUMENTO
+         ========================================================= -->
+    <!-- Define la codificación de caracteres para soportar tildes y ñ -->
+    <meta charset="UTF-8">
+
+    <!-- Hace que la página se adapte correctamente a móviles y tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Caribbean Reef Adventures | Gestión de Servicios</title>
+
+    <!-- Conexión con la hoja de estilos principal -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         HEADER / BARRA DE NAVEGACIÓN
+         ========================================================= -->
+    <header class="site-header">
+        <div class="container navbar">
+
+            <!-- Marca o nombre principal del proyecto -->
+            <a class="brand" href="index.html">
+                Caribbean Reef Adventures
+            </a>
+
+            <!-- Menú de navegación principal -->
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Servicios</a>
+                <a href="about.html">Acerca de</a>
+                <a href="contact.html">Contacto</a>
+
+                <!-- Esta opción aparece activa porque estamos en la página de gestión -->
+                <a href="admin-services.html" class="active">Gestión</a>
+            </nav>
+
+            <!-- Botón directo a WhatsApp -->
+            <a class="whatsapp-header"
+               target="_blank"
+               href="https://wa.me/573001234567">
+                WhatsApp
+            </a>
+        </div>
+    </header>
+
+
+    <!-- =========================================================
+         HERO / ENCABEZADO DE LA PÁGINA
+         ========================================================= -->
+    <section class="page-hero page-hero--compact gradient-ocean">
+        <div class="container">
+
+            <!-- Texto pequeño superior -->
+            <div class="eyebrow">Panel interno</div>
+
+            <!-- Título principal -->
+            <h1 class="services-title serif">Gestión de Servicios</h1>
+
+            <!-- Descripción breve -->
+            <p style="color: rgba(255, 255, 255, 0.82);">
+                Desde esta página puedes crear y eliminar servicios sin afectar las demás vistas del proyecto.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         CONTENIDO PRINCIPAL DEL MINI CRUD
+         ========================================================= -->
+    <section class="services-layout">
+        <div class="container">
+
+            <!-- =====================================================
+                 BLOQUE 1: FORMULARIO PARA CREAR NUEVOS SERVICIOS
+                 ===================================================== -->
+            <section class="crud-section">
+
+                <!-- Título del bloque -->
+                <h2 class="serif">➕ Crear nuevo servicio</h2>
+
+                <!--
+                  Formulario principal para registrar un nuevo servicio.
+
+                  Cada campo representa una propiedad del objeto servicio
+                  que luego será guardado en localStorage desde admin-services.js
+                -->
+                <form id="service-form" class="crud-form">
+
+                    <!-- Nombre visible del servicio -->
+                    <input type="text"
+                           id="name"
+                           placeholder="Nombre del servicio"
+                           required>
+
+                    <!-- Etiqueta o categoría del servicio -->
+                    <input type="text"
+                           id="tag"
+                           placeholder="Etiqueta (Ej: Aventura)"
+                           required>
+
+                    <!-- Precio corto que se muestra en la card -->
+                    <input type="text"
+                           id="priceLabel"
+                           placeholder="Precio visible (Ej: Desde $120.000 COP)"
+                           required>
+
+                    <!-- Precio detallado que se muestra en el detalle -->
+                    <input type="text"
+                           id="priceDetail"
+                           placeholder="Precio detalle (Ej: $120.000 COP)"
+                           required>
+
+                    <!-- Duración del servicio -->
+                    <input type="text"
+                           id="duration"
+                           placeholder="Duración (Ej: 45 - 60 min)"
+                           required>
+
+                    <!-- Horario o disponibilidad -->
+                    <input type="text"
+                           id="schedule"
+                           placeholder="Horario (Ej: Horario flexible)"
+                           required>
+
+                    <!-- Subtítulo llamativo para el detalle del servicio -->
+                    <input type="text"
+                           id="subtitle"
+                           placeholder="Subtítulo del servicio"
+                           required>
+
+                    <!-- Ruta de la imagen representativa -->
+                    <input type="text"
+                           id="image"
+                           placeholder="Ruta de imagen (Ej: assets/img/wakeboard.jpg)"
+                           required>
+
+                    <!-- Descripción corta del servicio -->
+                    <textarea id="shortDescription"
+                              placeholder="Descripción corta"
+                              required></textarea>
+
+                    <!-- Descripción completa del servicio -->
+                    <textarea id="description"
+                              placeholder="Descripción completa"
+                              required></textarea>
+
+                    <!-- Lista de elementos incluidos -->
+                    <textarea id="includes"
+                              placeholder="Incluye (separa cada elemento con coma)"
+                              required></textarea>
+
+                    <!-- Botón para guardar el nuevo servicio -->
+                    <button type="submit" class="btn btn-dark">
+                        Guardar servicio
+                    </button>
+                </form>
+
+                <!--
+                  Contenedor donde JavaScript mostrará mensajes
+                  de éxito o error al usuario
+                -->
+                <div id="crud-message" class="form-message"></div>
+            </section>
+
+
+            <!-- =====================================================
+                 BLOQUE 2: LISTADO DE SERVICIOS REGISTRADOS
+                 ===================================================== -->
+            <section class="crud-section">
+
+                <!-- Título del bloque -->
+                <h2 class="serif">🗂 Servicios registrados</h2>
+
+                <!--
+                  Contenedor donde se renderizan dinámicamente
+                  todos los servicios visibles del catálogo.
+
+                  Aquí aparecen:
+                  - servicios base
+                  - servicios creados manualmente
+                  - cada uno con opción de eliminar desde esta página
+                -->
+                <div id="admin-services-list" class="services-grid"></div>
+            </section>
+
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER / PIE DE PÁGINA
+         ========================================================= -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+
+            <!-- Marca y descripción -->
+            <div>
+                <div class="footer-brand">Caribbean Reef Adventures</div>
+                <p>
+                    Operador turístico especializado en deportes acuáticos en San Andrés.
+                    Tu aventura caribeña comienza aquí.
+                </p>
+            </div>
+
+            <!-- Columna: Servicios -->
+            <div class="footer-column">
+                <h4>Servicios</h4>
+                <ul>
+                    <li>Wakeboard</li>
+                    <li>Kitesurf</li>
+                    <li>Tour en Lancha Privada</li>
+                    <li>Tour al Amanecer</li>
+                </ul>
+            </div>
+
+            <!-- Columna: Empresa -->
+            <div class="footer-column">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="about.html">Quiénes somos</a></li>
+                    <li><a href="services.html">Experiencias</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="admin-services.html">Gestión</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna: Contacto -->
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>+57 300 123 4567</li>
+                    <li>hola@caribbeanreef.co</li>
+                    <li>San Andrés, Colombia</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Parte inferior del footer -->
+        <div class="container footer-bottom">
+            <span>© 2025 Caribbean Reef Adventures. Todos los derechos reservados.</span>
+            <span>Hecho con ❤️ en San Andrés 🇨🇴</span>
+        </div>
+    </footer>
+
+
+    <!-- =========================================================
+         ARCHIVO JAVASCRIPT DEL MINI CRUD
+         =========================================================
+
+         Este archivo se encarga de:
+         - leer el formulario
+         - crear servicios nuevos
+         - guardarlos en localStorage
+         - mostrar los servicios registrados
+         - eliminar servicios desde esta página
+    -->
+    <script src="assets/js/admin-services.js"></script>
+
+</body>
+</html>

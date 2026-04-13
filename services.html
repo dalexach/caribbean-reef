@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+
+    <!-- Hace que el sitio se adapte correctamente a celulares y tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Caribbean Reef Adventures | Servicios</title>
+
+    <!-- Enlace al archivo principal de estilos CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         HEADER / BARRA DE NAVEGACIÓN
+         ========================================================= -->
+    <header class="site-header">
+        <div class="container navbar">
+
+            <!-- Nombre o marca principal del sitio -->
+            <a class="brand" href="index.html">
+                Caribbean Reef Adventures
+            </a>
+
+            <!-- Menú principal de navegación -->
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+
+                <!-- Esta opción está activa porque estamos en la página de servicios -->
+                <a href="services.html" class="active">Servicios</a>
+
+                <a href="about.html">Acerca de</a>
+                <a href="contact.html">Contacto</a>
+                <a href="admin-services.html">Gestión</a>
+            </nav>
+
+            <!-- Botón directo a WhatsApp -->
+            <a class="whatsapp-header"
+               target="_blank"
+               href="https://wa.me/573001234567">
+                WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- =========================================================
+         HERO / ENCABEZADO PRINCIPAL DE LA PÁGINA
+         ========================================================= -->
+    <section class="page-hero page-hero--compact gradient-ocean" id="services-top">
+        <div class="container">
+
+            <!-- Texto pequeño superior -->
+            <div class="eyebrow">Catálogo completo</div>
+
+            <!-- Título principal -->
+            <h1 class="services-title serif">Nuestros Servicios</h1>
+
+            <!-- Texto descriptivo -->
+            <p style="color: rgba(255, 255, 255, 0.82);">
+                Descubre todas las aventuras acuáticas en las aguas del Caribe colombiano.
+            </p>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         SECCIÓN PRINCIPAL DEL CATÁLOGO
+         ========================================================= -->
+    <section class="services-layout">
+        <div class="container">
+
+            <!--
+              Este contenedor está vacío en el HTML porque las tarjetas
+              de servicios se crean dinámicamente con JavaScript.
+
+              El archivo main.js toma los datos desde services-data.js
+              o desde services.json y dibuja aquí las cards.
+            -->
+            <div id="services-list" class="services-grid"></div>
+
+            <!--
+              Sección para visualizar la lista personalizada de favoritos.
+
+              Esta parte cumple el requisito de interacción del usuario:
+              los servicios que se guardan con localStorage se muestran
+              nuevamente aquí en tiempo real.
+            -->
+            <section class="favorites-section">
+                <h2 class="serif">⭐ Mis favoritos</h2>
+
+                <!--
+                  Este contenedor se llena dinámicamente con JavaScript.
+                  Aquí aparecerán únicamente los servicios marcados
+                  como favoritos por el usuario.
+                -->
+                <div id="favorites-list" class="services-grid"></div>
+            </section>
+
+            <!--
+              Este contenedor también inicia vacío.
+
+              Aquí se inserta dinámicamente la vista detalle del servicio
+              cuando el usuario hace clic en el botón “Ver más”.
+
+              Importante:
+              el detalle no se abre en otra página, sino dentro
+              de esta misma sección.
+            -->
+            <div id="inline-detail" class="inline-detail"></div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
+         FOOTER / PIE DE PÁGINA
+         ========================================================= -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+
+            <!-- Marca y descripción general -->
+            <div>
+                <div class="footer-brand">Caribbean Reef Adventures</div>
+                <p>
+                    Operador turístico especializado en deportes acuáticos en San Andrés.
+                    Tu aventura caribeña comienza aquí.
+                </p>
+            </div>
+
+            <!-- Columna: servicios -->
+            <div class="footer-column">
+                <h4>Servicios</h4>
+                <ul>
+                    <li>Wakeboard</li>
+                    <li>Kitesurf</li>
+                    <li>Tour en Lancha Privada</li>
+                    <li>Tour al Amanecer</li>
+                </ul>
+            </div>
+
+            <!-- Columna: empresa -->
+            <div class="footer-column">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="about.html">Quiénes somos</a></li>
+                    <li><a href="services.html">Experiencias</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="admin-services.html">Gestión</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna: contacto -->
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>+57 300 123 4567</li>
+                    <li>hola@caribbeanreef.co</li>
+                    <li>San Andrés, Colombia</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Franja inferior del footer -->
+        <div class="container footer-bottom">
+            <span>© 2025 Caribbean Reef Adventures. Todos los derechos reservados.</span>
+            <span>Hecho con ❤️ en San Andrés 🇨🇴</span>
+        </div>
+    </footer>
+
+    <!-- =========================================================
+         ARCHIVOS JAVASCRIPT
+         ========================================================= -->
+    <!--
+      Archivo que contiene los datos de los servicios.
+      Funciona como respaldo local si el JSON externo no carga.
+    -->
+    <script src="assets/js/services-data.js"></script>
+
+    <!--
+      Archivo principal de lógica del proyecto.
+
+      Se encarga de:
+      - cargar los servicios
+      - renderizar las tarjetas del catálogo
+      - manejar favoritos
+      - mostrar el detalle expandible dentro de la misma página
+    -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

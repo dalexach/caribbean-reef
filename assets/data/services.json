@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "slug": "wakeboard",
+    "name": "Wakeboard",
+    "tag": "Adrenalina",
+    "shortDescription": "Deslízate sobre las aguas cristalinas del Caribe.",
+    "description": "Actividad acuática llena de adrenalina, ideal para quienes buscan diversión en el mar. Incluye acompañamiento guiado, inducción básica y una experiencia personalizada en San Andrés.",
+    "priceLabel": "Desde $120.000 COP",
+    "priceDetail": "$120.000 COP",
+    "duration": "45 - 60 min",
+    "schedule": "Horario flexible",
+    "subtitle": "Adrenalina y diversión sobre el Caribe",
+    "includes": [
+      "Instructor guía",
+      "Inducción inicial",
+      "Equipo básico",
+      "Acompañamiento durante la actividad",
+      "Experiencia personalizada"
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "kitesurf",
+    "name": "Kitesurf",
+    "tag": "Adrenalina",
+    "shortDescription": "Deslízate sobre las aguas cristalinas del Caribe.",
+    "description": "Deporte acuático que combina viento y mar, ofreciendo una experiencia única. Está pensado para quienes desean vivir una aventura técnica y emocionante con acompañamiento profesional.",
+    "priceLabel": "Desde $128.000 COP",
+    "priceDetail": "$128.000 COP",
+    "duration": "60 - 90 min",
+    "schedule": "Según clima",
+    "subtitle": "Viento, técnica y mar en una sola experiencia",
+    "includes": [
+      "Acompañamiento profesional",
+      "Orientación inicial",
+      "Equipo de seguridad",
+      "Sesión guiada",
+      "Atención personalizada"
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "tour-lancha-privada",
+    "name": "Tour en Lancha Privada",
+    "tag": "Exclusivo",
+    "shortDescription": "Deslízate sobre las aguas cristalinas del Caribe.",
+    "description": "Recorrido personalizado por diferentes puntos turísticos de San Andrés. Ideal para quienes buscan privacidad, comodidad y una experiencia caribeña exclusiva.",
+    "priceLabel": "Desde $350.000 COP",
+    "priceDetail": "$350.000 COP",
+    "duration": "2 - 3 horas",
+    "schedule": "Horario flexible",
+    "subtitle": "Recorre la isla con comodidad y exclusividad",
+    "includes": [
+      "Lancha privada con capitán",
+      "Recorrido personalizado",
+      "Chalecos salvavidas",
+      "Atención cercana",
+      "Experiencia exclusiva"
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "tour-amanecer",
+    "name": "Tour Amanecer",
+    "tag": "Mágico",
+    "shortDescription": "Deslízate sobre las aguas cristalinas del Caribe.",
+    "description": "Experiencia exclusiva para disfrutar el amanecer en el mar en un ambiente tranquilo. El cielo se pinta de naranja y dorado mientras la isla se observa desde una perspectiva completamente diferente.",
+    "priceLabel": "Desde $280.000 COP",
+    "priceDetail": "$280.000 COP",
+    "duration": "2 - 3 horas",
+    "schedule": "5:00 AM",
+    "subtitle": "El primer rayo de sol sobre el Caribe",
+    "includes": [
+      "Lancha privada con capitán",
+      "Café y desayuno a bordo",
+      "Manta y cojines",
+      "Punto de observación selecto",
+      "Guía local experto"
+    ]
+  }
+]
