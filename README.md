@@ -90,3 +90,10 @@ vercel
 El archivo `vercel.json` ya incluye la configuración recomendada
 (`cleanUrls: true`) para que las URLs se vean como `/about` en lugar de
 `/about.html`.
+
+## Integrantes
+ELIU SILVERA OVIEDO  
+DANIELA ALEXANDRA CHAMORRO GUERRERO 
+JUAN PABLO BETANCUR FIGUEROA 
+SANTIAGO AVELLANEDA TAPIA 
+DUBAN FELIPE BELTRÁN MENDOZA 
