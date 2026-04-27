@@ -956,6 +956,7 @@ button {
             width: 26px;
             height: 26px;
             object-fit: contain;
+            filter: brightness(0) invert(1);
         }
 
     .contact-info-card small {
