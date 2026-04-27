@@ -299,6 +299,13 @@ button {
     padding: 76px 0 54px;
 }
 
+/* Hero con imagen de fondo: ajusta la foto para que cubra todo el bloque */
+.hero-with-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 
 /* ==========================================================================
    8. HOME
@@ -529,6 +536,9 @@ button {
     border-radius: 26px;
     position: relative;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .about-years {
@@ -623,6 +633,9 @@ button {
 
 .team-photo {
     height: 180px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .team-card .body {
@@ -933,7 +946,17 @@ button {
         height: 48px;
         border-radius: 14px;
         background: linear-gradient(180deg, #1a7ac5 0%, #21d2c4 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
     }
+
+        .contact-info-card .icon img {
+            width: 26px;
+            height: 26px;
+            object-fit: contain;
+        }
 
     .contact-info-card small {
         display: block;

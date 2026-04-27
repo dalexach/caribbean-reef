@@ -39,6 +39,9 @@ window.SERVICES_DATA = [
         // En el diseño se muestra como badge sobre la tarjeta.
         tag: "Adrenalina",
 
+        // Ruta de la imagen representativa del servicio.
+        image: "assets/img/services/Wakeboard.png",
+
         // Descripción breve.
         // Se utiliza principalmente en la tarjeta del catálogo.
         shortDescription: "Deslízate sobre las aguas cristalinas del Caribe.",
@@ -95,6 +98,9 @@ window.SERVICES_DATA = [
         // Categoría o tipo de experiencia.
         tag: "Adrenalina",
 
+        // Ruta de la imagen representativa del servicio.
+        image: "assets/img/services/Kitesurf.png",
+
         // Descripción breve para la card.
         shortDescription: "Deslízate sobre las aguas cristalinas del Caribe.",
 
@@ -145,6 +151,9 @@ window.SERVICES_DATA = [
         // Categoría visual.
         tag: "Exclusivo",
 
+        // Ruta de la imagen representativa del servicio.
+        image: "assets/img/services/Lancha_Privada.png",
+
         // Texto breve para el listado.
         shortDescription: "Deslízate sobre las aguas cristalinas del Caribe.",
 
@@ -194,6 +203,9 @@ window.SERVICES_DATA = [
 
         // Categoría o distintivo visual.
         tag: "Mágico",
+
+        // Ruta de la imagen representativa del servicio.
+        image: "assets/img/services/Tour_Amanecer.png",
 
         // Descripción breve del servicio.
         shortDescription: "Deslízate sobre las aguas cristalinas del Caribe.",

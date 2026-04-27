@@ -238,10 +238,20 @@ function buildServiceCard(service, includeFavorite = true) {
         ? "★ Favorito"
         : "☆ Favorito";
 
+    /*
+    | Si el servicio tiene imagen, se usa como fondo de la card.
+    | Si no, se mantiene el gradiente original como respaldo visual.
+    */
+    const imageStyle = service.image
+        ? `style="background-image:url('${service.image}'); background-size:cover; background-position:center;"`
+        : ``;
+
+    const imageClass = service.image ? "card-image" : "card-image gradient-card";
+
     // Retorna la estructura HTML de la card.
     return `
     <article class="service-card">
-      <div class="card-image gradient-card">
+      <div class="${imageClass}" ${imageStyle}>
         <span class="card-tag">${service.tag}</span>
       </div>
 
@@ -413,11 +423,19 @@ function buildIncludesColumns(items = []) {
 | - HTML de la vista detalle
 */
 function buildInlineDetail(service) {
+    /*
+    | Si el servicio tiene imagen, se usa como fondo del banner del detalle.
+    | Si no, queda con el degradado original definido en CSS.
+    */
+    const heroStyle = service.image
+        ? `style="background-image:url('${service.image}'); background-size:cover; background-position:center;"`
+        : ``;
+
     return `
     <div class="detail-panel">
       <div class="detail-topbar"></div>
 
-      <div class="detail-hero">
+      <div class="detail-hero" ${heroStyle}>
         <div class="detail-overlay">
           <span class="detail-tag">${service.tag}</span>
           <h2 class="detail-title">${service.name}</h2>
