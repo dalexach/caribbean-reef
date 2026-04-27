@@ -167,6 +167,10 @@
                   de éxito o error al usuario
                 -->
                 <div id="crud-message" class="form-message"></div>
+
+                <button type="button" id="restore-services-btn" class="btn btn-restore">
+                    Restaurar servicios originales
+                </button>
             </section>
 
 
@@ -227,7 +231,6 @@
                     <li><a href="about.html">Quiénes somos</a></li>
                     <li><a href="services.html">Experiencias</a></li>
                     <li><a href="contact.html">Contacto</a></li>
-                    <li><a href="admin-services.html">Gestión</a></li>
                 </ul>
             </div>
 
@@ -261,6 +264,12 @@
          - mostrar los servicios registrados
          - eliminar servicios desde esta página
     -->
+    <!--
+      Datos base de servicios. Se usa como respaldo si el navegador no carga
+      assets/data/services.json cuando el proyecto se abre con doble clic.
+    -->
+    <script src="assets/js/services-data.js"></script>
+
     <script src="assets/js/admin-services.js"></script>
 
 </body>

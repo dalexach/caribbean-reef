@@ -3,7 +3,7 @@
 Sitio web de un operador turístico ficticio en San Andrés (Colombia),
 desarrollado con **HTML, CSS y JavaScript puro** (sin frameworks ni build tools).
 
-Proyecto académico — Entrega 2.
+Proyecto académico — Entrega Final.
 
 ## Páginas
 
@@ -13,7 +13,7 @@ Proyecto académico — Entrega 2.
 | Servicios | `services.html` | Catálogo con cards, detalle expandible y favoritos. |
 | Acerca de | `about.html` | Historia, valores y equipo. |
 | Contacto | `contact.html` | Formulario con validaciones y datos de contacto. |
-| Gestión | `admin-services.html` | Mini CRUD (crear y eliminar servicios con `localStorage`). |
+| Gestión | `admin-services.html` | Mini CRUD (crear, eliminar y restaurar servicios con `localStorage`). |
 
 ## Estructura del proyecto
 
@@ -47,7 +47,8 @@ caribbean-reef/
 - Favoritos persistentes con `localStorage`.
 - Vista de detalle expandible dentro de la misma página.
 - Formulario de contacto con validaciones en JavaScript.
-- Mini CRUD de servicios (crear/eliminar) en la página de Gestión.
+- Mini CRUD de servicios en la página de Gestión: crear, eliminar (incluso servicios base) y restaurar el catálogo original.
+- Sincronización entre Gestión y Servicios: los cambios hechos en `admin-services.html` se reflejan automáticamente en `services.html`.
 
 ## Cómo ejecutar localmente
 

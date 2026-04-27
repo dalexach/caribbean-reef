@@ -1152,6 +1152,16 @@ button {
   grid-column: 1 / -1;
 }
 
+.btn-restore {
+  margin-top: 18px;
+  background: #c0392b;
+  color: #ffffff;
+}
+
+.btn-restore:hover {
+  background: #a93226;
+}
+
 .favorites-empty {
   background: #ffffff;
   border-radius: 18px;

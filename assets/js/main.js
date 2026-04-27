@@ -26,6 +26,16 @@
 */
 const STORAGE_KEY = "caribbean_favorites";
 
+/*
+| Claves compartidas con admin-services.js.
+| Permiten que la página de Servicios lea los cambios hechos en Gestión.
+*/
+const CUSTOM_SERVICES_KEY = "custom_services";
+const DELETED_SERVICES_KEY = "deleted_service_ids";
+
+const CRUD_VERSION_KEY = "caribbean_crud_version";
+const CURRENT_CRUD_VERSION = "crud-restaurar-catalogo-v2";
+
 
 /* ==========================================================================
    2. CARGA DE DATOS
@@ -43,9 +53,22 @@ const STORAGE_KEY = "caribbean_favorites";
 |
 | Si tampoco existe ese respaldo, retorna un arreglo vacío.
 */
+function resetOldCrudStateOnce() {
+    const savedVersion = localStorage.getItem(CRUD_VERSION_KEY);
+
+    if (savedVersion === CURRENT_CRUD_VERSION) return;
+
+    localStorage.removeItem(CUSTOM_SERVICES_KEY);
+    localStorage.removeItem(DELETED_SERVICES_KEY);
+    localStorage.setItem(CRUD_VERSION_KEY, CURRENT_CRUD_VERSION);
+}
+
 async function getServices() {
+    resetOldCrudStateOnce();
+    let baseServices = [];
+
     try {
-        // Solicita el archivo JSON que contiene los servicios.
+        // Solicita el archivo JSON que contiene los servicios base.
         const response = await fetch("assets/data/services.json");
 
         // Si la respuesta no es correcta, lanza un error.
@@ -53,20 +76,44 @@ async function getServices() {
             throw new Error("No fue posible cargar services.json");
         }
 
-        // Convierte la respuesta en JSON y la retorna.
-        return await response.json();
+        // Convierte la respuesta en JSON.
+        baseServices = await response.json();
     } catch (error) {
-        // Si existe el respaldo local en window, lo retorna.
+        /*
+        | Si el proyecto se abre con doble clic, algunos navegadores bloquean
+        | fetch(). En ese caso usamos el respaldo local de services-data.js.
+        */
         if (window.SERVICES_DATA) {
-            return window.SERVICES_DATA;
+            baseServices = window.SERVICES_DATA;
+        } else {
+            console.error(error);
+            baseServices = [];
         }
-
-        // Muestra el error en consola para depuración.
-        console.error(error);
-
-        // Retorna un arreglo vacío para evitar que la app se rompa.
-        return [];
     }
+
+    /*
+    | Lee los servicios creados en Gestión y los ids eliminados.
+    | Esta es la conexión directa entre admin-services.html y services.html.
+    */
+    const customServices = JSON.parse(
+        localStorage.getItem(CUSTOM_SERVICES_KEY) || "[]"
+    );
+
+    const deletedIds = JSON.parse(
+        localStorage.getItem(DELETED_SERVICES_KEY) || "[]"
+    );
+
+    /*
+    | Retorna el catálogo final:
+    | 1. Servicios base del JSON o respaldo local.
+    | 2. Servicios nuevos creados desde Gestión.
+    | 3. Sin los servicios eliminados desde Gestión.
+    */
+    const deletedIdStrings = deletedIds.map(String);
+
+    return [...baseServices, ...customServices].filter(
+        (service) => !deletedIdStrings.includes(String(service.id))
+    );
 }
 
 
